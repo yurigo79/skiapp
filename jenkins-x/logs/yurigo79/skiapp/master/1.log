@@ -1,0 +1,134 @@
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-8vqkv[0m
+{"level":"warn","ts":1583453978.6795208,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583453978.6801732,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-rl9tn[0m
+{"level":"warn","ts":1583453980.2037227,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1583453980.2226274,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-yurigo79-skiapp-master-hj64p-8bdjm[0m
+{"level":"warn","ts":1583454026.774408,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1583454028.6872313,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/********/skiapp.git @ v0.0.43 in path /workspace/source"}
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b7797cc9b8810024e78278aedabe595c60960715
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+Command "credential" is deprecated, it will be removed on Jun 1 2020.  This is replaced by Tekton's mounted secrets
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm WARN skiapp@1.0.0 No repository field.
+npm WARN skiapp@1.0.0 No license field.
+
+added 152 packages from 599 contributors and audited 269 packages in 6.339s
+found 0 vulnerabilities
+
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> skiapp@1.0.0 test /workspace/source
+> ./node_modules/mocha/bin/mocha tests/ --exit
+
+Server running at http://localhost:8080
+
+
+  GET Home page
+    ✓ Should return a 200 ok response (38ms)
+
+
+  1 passing (53ms)
+
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0306 00:20:42.265868      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+ERROR: logging before flag.Parse: E0306 00:20:42.271635      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+2020/03/06 00:20:42 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2020/03/06 00:20:43 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Executing 0 build triggers                   
+[36mINFO[0m[0001] cmd: EXPOSE                                  
+[36mINFO[0m[0001] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0001] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0002] ENV PORT 8080                                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] EXPOSE 8080                                  
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0002] WORKDIR /usr/src/app                         
+[36mINFO[0m[0002] cmd: workdir                                 
+[36mINFO[0m[0002] Changed working directory to /usr/src/app    
+[36mINFO[0m[0002] Creating directory /usr/src/app              
+[36mINFO[0m[0002] Taking snapshot of files...                  
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] COPY . .                                     
+[36mINFO[0m[0003] Taking snapshot of files...                  
+[36mINFO[0m[0005] CMD ["npm", "start"]                         
+[36mINFO[0m[0005] No files changed in this command, skipping snapshotting. 
+2020/03/06 00:20:47 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2020/03/06 00:20:47 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2020/03/06 00:20:47 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2020/03/06 00:20:47 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2020/03/06 00:20:47 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2020/03/06 00:20:49 pushed blob: sha256:21fb23b85692b302b19e2d868fb7c296a0d28c14c9843c04b39329b4b8dc1200
+2020/03/06 00:20:49 pushed blob: sha256:e2b3a9ccf2c399d49e282edecd87a20dafa1bdb90b6ffcded55defa6cc47bd9d
+2020/03/06 00:20:50 pushed blob: sha256:0047e68a5e3e0a6470d65286d2d52b78fc20dcd8bd03555f03ec5661ed0d700f
+2020/03/06 00:20:50 gcr.io/coherent-racer-270219/skiapp:0.0.43: digest: sha256:598bd476bc55b2ef1568ec63100e4c4b5b225ebb0f2d57d91d32d71ad6f313ae size: 1407
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/skiapp to an unshallow repository
+Generating change log from git ref 2d074ce06204fac9a7423a1375245f005014d96d => d392f15f213389539fcb412547c1e445343fa87d
+Associating user x-0 in users.jenkins.io with email yuri.g@taboola.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit b7797cc9b8810024e78278aedabe595c60960715 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email yuri.g@taboola.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit b7797cc9b8810024e78278aedabe595c60960715 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for ********/skiapp and tag v0.0.43 so creating a new release
+Updated the release information at https://github.com/********/skiapp/releases/tag/v0.0.43
+generated: /workspace/source/charts/skiapp/templates/release.yaml
+Created Release skiapp-0-0-43 resource in namespace **
+Updating PipelineActivity ********-skiapp-master-1 with version 0.0.43
+Updated PipelineActivities ********-skiapp-master-1 with release notes URL: https://github.com/********/skiapp/releases/tag/v0.0.43
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file skiapp-0.0.43.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32myurigo79-skiapp-master-hj64p-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app skiapp version 0.0.43 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/********/environment-scale-**-staging/pull/2
+Added label updatebot to Pull Request https://github.com/********/environment-scale-**-staging/pull/2
+got git provider status pending from PR https://github.com/********/environment-scale-**-staging/pull/2
+got git provider status pending from PR https://github.com/********/environment-scale-**-staging/pull/2
+got git provider status pending from PR https://github.com/********/environment-scale-**-staging/pull/2
+got git provider status pending from PR https://github.com/********/environment-scale-**-staging/pull/2
+got git provider status pending from PR https://github.com/********/environment-scale-**-staging/pull/2
+Pull Request https://github.com/********/environment-scale-**-staging/pull/2 is merged at sha b0179d605b854f5394903ab9ec5159ec4065410a
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names skiapp, **-skiapp, **-staging-skiapp
